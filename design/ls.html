@@ -1,0 +1,11 @@
+<!doctype html><meta charset="utf-8"><style>
+body{margin:0;background:#fff;font:13px Consolas,monospace;color:#202124;width:1100px}
+.bar{background:#f1f3f4;padding:8px 14px;border-bottom:1px solid #ccc;font:13px Segoe UI}
+.bar b{border-bottom:2px solid #1a73e8;padding-bottom:6px;margin-right:18px}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:4px 8px;text-align:left;vertical-align:top;word-break:break-all}
+th{background:#f8f9fa}</style>
+<div class=bar><b>Application</b> Local storage &rsaquo; http://localhost:8099 (LearnHub on-device data)</div>
+<table id=t><tr><th style="width:170px">Key</th><th>Value</th></tr></table>
+<script>
+fetch('ls.json').then(r=>r.json()).then(o=>{for(const[k,v]of Object.entries(o)){const r=t.insertRow();r.insertCell().textContent=k;r.insertCell().textContent=v}})
+</script>
